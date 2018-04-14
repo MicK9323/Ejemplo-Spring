@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: demospring-backend-apirest
+Implementation-Version: 1.0
+Built-By: Admin
+Implementation-Vendor-Id: com.demospring.app
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/demospring-backend-apirest
+Created-By: Maven Integration for Eclipse
+
