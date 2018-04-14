@@ -17,9 +17,16 @@
 						th:text="'crear factura'"></a>
 				</h4>
 
-				<img th:if="${#strings.length(cliente.foto) > 0}"
+				<!-- <img th:if="${#strings.length(cliente.foto) > 0}"
 					class="img-thumbnail rounded float-left" style="max-width: 25%;"
-					th:src="@{'/uploads/' + ${cliente.foto}}" th:alt="${cliente.foto}" />
+					th:src="@{'/uploads/' + ${cliente.foto}}" th:alt="${cliente.foto}" /> -->
+				<img
+					th:if="${#strings.length(cliente.foto) == 0} or ${ cliente.foto == null }"
+					th:alt="user" th:src="@{'/uploads/User.png'}"
+					class="img-thumbnail rounded float-left" style="max-width: 25%;">
+				<img th:if="${#strings.length(cliente.foto) > 0}"
+					th:alt="cliente.foto" th:src="@{'/uploads/'+${cliente.foto}}"
+					class="img-thumbnail rounded float-left" style="max-width: 25%;">
 
 				<ul class="list-group">
 					<li class="list-group-item active" th:text="${cliente.nombre}"></li>
