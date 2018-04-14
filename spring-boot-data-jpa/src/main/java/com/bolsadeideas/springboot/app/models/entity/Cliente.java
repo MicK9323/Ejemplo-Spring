@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -42,7 +43,6 @@ public class Cliente implements Serializable {
 	@Email
 	private String email;
 
-	@NotNull
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -50,6 +50,11 @@ public class Cliente implements Serializable {
 	
 	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Factura> facturas;
+	
+	@PrePersist
+	private void prePersist() {
+		this.createAt = new Date();
+	}
 	
 	public Cliente() {
 		facturas = new ArrayList<Factura>();
