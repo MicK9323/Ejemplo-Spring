@@ -20,7 +20,7 @@ public class SpringBootDataJpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		uploadFileService.deleteAll();
-		uploadFileService.init();
+//		uploadFileService.deleteAll();
+//		uploadFileService.init();
 	}
 }
